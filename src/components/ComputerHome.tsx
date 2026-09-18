@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -121,6 +121,24 @@ export function ComputerHome() {
   const t = useTranslations("home");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const active = projects.find((p) => p.id === hoveredId) ?? null;
+
+  // Enseñanza no textual: al entrar a la página, una tecla se "toca" sola
+  // brevemente (mismo estado que el hover real: se levanta + muestra
+  // preview en pantalla) para mostrar que el teclado es interactivo, sin
+  // agregar texto de instrucción.
+  useEffect(() => {
+    const firstId = projects[0]?.id;
+    if (!firstId) return;
+    const show = setTimeout(() => setHoveredId(firstId), 700);
+    const hide = setTimeout(
+      () => setHoveredId((h) => (h === firstId ? null : h)),
+      1600
+    );
+    return () => {
+      clearTimeout(show);
+      clearTimeout(hide);
+    };
+  }, []);
 
   return (
     <div className="relative flex h-full min-h-[calc(100dvh-4rem)] flex-col">
@@ -246,6 +264,8 @@ export function ComputerHome() {
                 const meta = categories[project.category];
                 const label = project.titleParts.map((p) => p.text).join(" ");
 
+                const isPreviewing = hoveredId === project.id;
+
                 return (
                   <Link
                     key={keyIdx}
@@ -257,9 +277,16 @@ export function ComputerHome() {
                       setHoveredId((h) => (h === project.id ? null : h))
                     }
                     onBlur={() => setHoveredId((h) => (h === project.id ? null : h))}
-                    onTouchStart={() => setHoveredId(project.id)}
-                    style={{ flex: `${w} ${w} 0%` }}
-                    className="flex items-center justify-center rounded-[3px] transition-transform hover:-translate-y-0.5 focus:-translate-y-0.5 focus:outline-none"
+                    onTouchEnd={(e) => {
+                      if (isPreviewing) return; // 2do tap: navega normal
+                      e.preventDefault(); // 1er tap: solo mostrar preview
+                      setHoveredId(project.id);
+                    }}
+                    style={{ flex: `${w} ${w} 0%`, outlineColor: meta.bg }}
+                    className={[
+                      "flex items-center justify-center rounded-[3px] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+                      isPreviewing ? "-translate-y-0.5" : "hover:-translate-y-0.5",
+                    ].join(" ")}
                   >
                     <span
                       className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[3px]"
