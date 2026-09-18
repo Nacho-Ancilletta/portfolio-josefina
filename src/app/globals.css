@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* paleta */
+  --color-sky: #a8d0e6;
+  --color-navy: #1e3a8a;
+  --color-cream: #f5efe0;
+  --color-bordeaux: #6b1f2a;
+
+  /* tipografía */
+  --font-serif: var(--font-fraunces);
+  --font-serif-alt: var(--font-instrument-serif);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-space-mono);
+}
+
+body {
+  background: var(--color-sky);
+  color: var(--color-bordeaux);
+}
+
+/* patrón cuadrillé, uso puntual como fondo de bloques */
+.bg-grid {
+  background-image:
+    linear-gradient(var(--color-bordeaux) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-bordeaux) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center;
+}
+
+/* patrón rayas verticales, uso puntual */
+.bg-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-bordeaux) 0,
+    var(--color-bordeaux) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}

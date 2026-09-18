@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "emptyPanel": "Josefina Moldes"
+  },
+  "categories": {
+    "health": "Health branding",
+    "art": "Art & culture",
+    "audiovisual": "Audiovisual",
+    "product": "Product branding",
+    "editorial": "Editorial",
+    "digital": "Digital / UX"
+  },
+  "project": {
+    "backToHome": "Back to home",
+    "gallery": "Gallery",
+    "year": "Year",
+    "video": "Video",
+    "prototype": "Prototype",
+    "pending": "pending",
+    "credits": "Team",
+    "visitLink": "Visit site ↗"
+  },
+  "about": {
+    "role": "Multidisciplinary designer",
+    "title": "About",
+    "nameLabel": "Name",
+    "roleLabel": "Role",
+    "photoPlaceholder": "Photo of Josefina",
+    "bio": "Multidisciplinary designer specialized in visual identity, branding and editorial pieces — from analog to digital, always with a bit of intentional mess."
+  },
+  "contact": {
+    "title": "Contact",
+    "addressedTo": "To: Josefina Moldes",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send letter",
+    "sent": "Letter sent"
+  }
+}

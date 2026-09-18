@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "home": {
+    "emptyPanel": "Josefina Moldes"
+  },
+  "categories": {
+    "health": "Branding salud",
+    "art": "Arte y cultura",
+    "audiovisual": "Audiovisual",
+    "product": "Branding producto",
+    "editorial": "Editorial",
+    "digital": "Digital / UX"
+  },
+  "project": {
+    "backToHome": "Volver al inicio",
+    "gallery": "Galería",
+    "year": "Año",
+    "video": "Video",
+    "prototype": "Prototipo",
+    "pending": "pendiente",
+    "credits": "Equipo",
+    "visitLink": "Ir al sitio ↗"
+  },
+  "about": {
+    "role": "Diseñadora integral",
+    "title": "Sobre mí",
+    "nameLabel": "Nombre",
+    "roleLabel": "Rol",
+    "photoPlaceholder": "Foto de Josefina",
+    "bio": "Diseñadora integral especializada en identidad visual, branding y piezas editoriales — de lo analógico a lo digital, siempre con un poco de desorden intencional."
+  },
+  "contact": {
+    "title": "Contacto",
+    "addressedTo": "Para: Josefina Moldes",
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "send": "Enviar carta",
+    "sent": "Carta enviada"
+  }
+}
