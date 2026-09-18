@@ -65,7 +65,7 @@ export function WordSearch({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.15 }}
-            className="absolute inset-x-0 bottom-full z-20 mb-3 flex flex-wrap justify-center gap-3 border p-3"
+            className="absolute inset-x-0 top-full z-20 mt-3 flex flex-wrap justify-center gap-3 border p-3"
             style={{
               borderColor: meta.border,
               backgroundColor: `${meta.bg}1a`,
